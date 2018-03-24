@@ -1,4 +1,6 @@
 # -*- coding:UTF-8 -*-
+__author__ = 'jy.cai'
+
 from keras.models import load_model
 import os
 import sys
@@ -7,7 +9,6 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import text_to_word_sequence
 import  json
 
-__author__ = 'jy.cai'
 
 BASE_DIR = ''
 MODEL_DIR = os.path.join(BASE_DIR, 'model_lstm')
