@@ -142,12 +142,12 @@ x = Conv1D(nb_filters, 5, activation="relu", padding='valid')(x)
 x = MaxPooling1D(2)(x)
 x = GRU(hiden_lstm_layer, dropout=0.2, recurrent_dropout=0.2)(x)
 x = Dropout(0.4)(x)
-preds = Dense(len(labels_index), activation='sigmoid')(x)
+preds = Dense(len(labels_index), activation='softmax')(x)
 #rmsprop = RMSprop(lr=0.001)
 
 model = Model(sequence_input, preds)
 model.summary()
-model.compile(loss='binary_crossentropy',
+model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['acc']
                )
