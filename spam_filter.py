@@ -91,7 +91,6 @@ class SpamFilter(object):
             one_data = []
             #word to token
             for word in content:
-                one_data=[]
                 if word in dict.keys() and dict[word] < MAX_NUM_WORDS:
                     one_data.append(dict[word])
                 else:
